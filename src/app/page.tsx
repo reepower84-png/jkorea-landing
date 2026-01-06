@@ -400,11 +400,9 @@ export default function Home() {
                 개그맨, MC, 아나운서 섭외 전문<br />
                 성공적인 행사의 파트너
               </p>
-              <div className="space-y-2 text-sm text-slate-500">
-                <p>제이코리아</p>
-                <p>대표자: 이주영</p>
-                <p>사업자등록번호: 278-30-01540</p>
-              </div>
+              <p className="text-sm text-slate-500">
+                상호: 제이코리아, 대표: 이주영, 사업자등록번호: 278-30-01540
+              </p>
             </div>
             <div className="md:text-right">
               <h5 className="font-bold text-white mb-4">빠른 상담</h5>
