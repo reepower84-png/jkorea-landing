@@ -365,6 +365,15 @@ export default function Home() {
               >
                 {isSubmitting ? "접수 중..." : "상담 신청하기"}
               </button>
+
+              <a
+                href="http://pf.kakao.com/_kbDdxb/chat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-[#FEE500] hover:bg-[#FDD835] text-slate-900 py-4 rounded font-bold text-lg transition-colors shadow-lg flex items-center justify-center mt-3"
+              >
+                카카오톡으로 상담하기
+              </a>
             </div>
           </form>
         </div>
