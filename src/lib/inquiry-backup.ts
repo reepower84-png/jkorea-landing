@@ -27,5 +27,15 @@ export async function backupFetch(url: string | URL | Request, init: RequestInit
       console.error("문의 백업 저장 실패", err);
     }
   }
-  return fetch(url, init);
+  // 대표 웹후크가 죽으면(11/7 처럼 지워지면 404) 예비 웹후크(다른 디스코드 서버)로 다시 보낸다.
+  const backup = process.env.DISCORD_WEBHOOK_URL_BACKUP?.trim();
+  let res: Response | undefined;
+  try {
+    res = await fetch(url, init);
+    if (res.ok || !backup) return res;
+  } catch (err) {
+    if (!backup) throw err;
+  }
+  console.error("디스코드 대표 웹후크 실패 → 예비로 보냄", res?.status);
+  return fetch(backup, init);
 }
